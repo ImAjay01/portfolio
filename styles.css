@@ -10,10 +10,10 @@
   /* border: red 1px solid; */
 }
 body{
-  background: linear-gradient(135deg, #333333, #555555, #777777);
+  background: linear-gradient(135deg, #6D676E, #1B1B1E, #96031A);
 }
 #navbar{
-  background-color: #333; 
+  background-color: #1B1B1E;
   border-bottom: #be3144 solid 2px;
   padding: 18px; 
   position: fixed;
@@ -39,13 +39,17 @@ body{
 }
 #navbar a{
   text-decoration: none;
-  color: whitesmoke;
+  color: #FBFFFE;
   font-size: 1.3rem;
-  font-weight: 500;
-  
+  font-weight: 500;  
+}
+#navbar a:hover{
+  transition: color 0.3s;
+  color: #ef8354;
+
 }
 #welcome-section{
-  color: whitesmoke;
+  color: #FAA916;
   position: relative;
   width: 100%;
   height: 100vh;
