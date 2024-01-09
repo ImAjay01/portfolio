@@ -1,19 +1,73 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@100;300;400&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  /* border: red 1px solid; */
 }
-body{
+/* Responsive code */
+/* Common styles for all devices */
+
+/* ... your existing styles ... */
+
+/* Responsive styles for devices with a maximum width of 600px (phones) */
+@media only screen and (max-width: 600px) {
+  #navbar {
+    padding: 12px;
+  }
+
+  #welcome-section {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .project-tile {
+    width: 80%;
+    margin-top: 8%;
+  }
+
+  #contact-section {
+    height: auto;
+  }
+
+  footer p {
+    padding-top: 20px;
+  }
+
+  /* Stack project tiles vertically on phones */
+  #project-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-tile {
+    width: 80%;
+    margin-top: 8%;
+  }
+}
+
+/* Responsive styles for devices with a maximum width of 768px (iPads) */
+@media only screen and (max-width: 768px) {
+  #welcome-section {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .project-tile {
+    width: 60%;
+  }
+}
+
+body {
   background: linear-gradient(135deg, #6D676E, #1B1B1E, #96031A);
+  position: relative;
+  margin: 0;
 }
-#navbar{
-  background-color: #1B1B1E;
+
+#navbar {
+  background: linear-gradient(135deg, #6D676E, #1B1B1E, #96031A);
   border-bottom: #be3144 solid 2px;
   padding: 18px; 
   position: fixed;
@@ -27,60 +81,140 @@ body{
   justify-content: flex-end;
   align-items: center;
 }
-#navbar ul{
+
+#navbar ul {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   list-style: none;
 }
 
-#navbar li{
+#navbar li {
   margin-right: 2rem;
 }
-#navbar a{
+
+#navbar a {
   text-decoration: none;
   color: #FBFFFE;
   font-size: 1.3rem;
-  font-weight: 500;  
+  font-weight: 500;
 }
-#navbar a:hover{
+
+#navbar a:hover {
   transition: color 0.3s;
   color: #ef8354;
-
 }
-#welcome-section{
+
+
+#welcome-section {
   color: #FAA916;
-  position: relative;
-  width: 100%;
+  width: 80%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  margin-left: 5%;
+  margin-left: 10%;
 }
 
-#name{
+
+#name {
   font-size: 4rem;
-  font-family: Montserrat,system-ui, -apple-system, BlinkMacSystemFont;
+  font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont;
   margin-bottom: 2%;
 }
-#welcome-section span{
- 
+
+#welcome-section span {
   font-size: 4rem;
-  font-family: Montserrat,system-ui, -apple-system, BlinkMacSystemFont;
+  font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont;
   margin-bottom: 2%;
 }
-#welcome-section span:hover{
+
+#welcome-section span:hover {
   transition: all 0.3s;
   color: #be3144;
   font-size: 4rem;
-  font-family: Montserrat,system-ui, -apple-system, BlinkMacSystemFont;
+  font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont;
   margin-bottom: 2%;
-
 }
 
-#profession{
+#profession {
   font-size: 2.5rem;
 }
 
+/* Project-section */
+
+#project-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
+.project-tile{
+  margin-top: 14%;
+  width: 30%;
+  height: 60vh;
+}
+.project-tile span, .project-tile h3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-tile img{
+  height: 60%;
+  width: 90%;
+  border-radius: 8px;
+}
+.project-tile h3{
+  color: #FBFFFE;
+  padding: 4px;
+}
+/* contact-section */
+#contact-section {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#work-greet {
+  font-family: Montserrat, sans-serif;
+  font-size: 4rem;
+  color: #FBFFFE;
+  margin-bottom: 20px;
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.socials a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #FBFFFE;
+  font-size: 1.5rem;
+  transition: color 0.3s; 
+}
+
+.socials a:hover {
+  color: #FAA916; 
+}
+
+
+footer{
+  height: 20vh;
+  border-top: #FAA916 3px solid;
+  background-color: #1B1B1E;
+}
+footer p{
+  color: #96031A;
+  text-align: center;
+  padding-top: 52px;
+}
