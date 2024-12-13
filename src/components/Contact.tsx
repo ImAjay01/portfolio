@@ -115,29 +115,29 @@ const Contact = () => {
               <h3 className="text-2xl font-semibold mb-6">Connect With Me</h3>
               <div className="space-y-6">
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/ImAjay01"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400"
                 >
                   <Github className="w-6 h-6 mr-4" />
-                  <span>github.com/yourusername</span>
+                  <span>github.com/ImAjay01</span>
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/imajay01/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400"
                 >
                   <Linkedin className="w-6 h-6 mr-4" />
-                  <span>linkedin.com/in/yourusername</span>
+                  <span>linkedin.com/in/imajay01</span>
                 </a>
                 <a
-                  href="mailto:your.email@example.com"
+                  href="mailto:asp44556@gmail.com"
                   className="flex items-center text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400"
                 >
                   <Mail className="w-6 h-6 mr-4" />
-                  <span>your.email@example.com</span>
+                  <span>asp44556@gmail.com</span>
                 </a>
               </div>
             </div>

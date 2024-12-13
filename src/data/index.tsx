@@ -30,28 +30,28 @@ export const skills: Skill[] = [
 
 export const projects: Project[] = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A full-featured e-commerce platform built with React and Node.js',
+    title: 'Amazon Clone',
+    description: 'An Amazon clone using JavaScript, HTML, and CSS replicates key e-commerce features like product listings, cart.',
     image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1000',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    githubUrl: 'https://github.com/username/ecommerce',
-    liveUrl: 'https://ecommerce-demo.com',
+    technologies: ['Javascript', 'CSS', 'HTML', 'Jasmine'],
+    githubUrl: 'https://github.com/ImAjay01/Amazon-clone',
+    liveUrl: 'https://imajay01.github.io/Amazon-clone/',
   },
   {
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates',
+    title: 'Personal Portfolio',
+    description: 'A portfolio built with TypeScript, Vite, and React showcases projects with fast performance, type safety, and modern UI components.',
     image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80&w=1000',
-    technologies: ['React', 'Firebase', 'Tailwind CSS'],
-    githubUrl: 'https://github.com/username/task-manager',
-    liveUrl: 'https://task-manager-demo.com',
+    technologies: ['React', 'Vite','Typescript', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/ImAjay01/portfolio',
+    liveUrl: 'https://portfolio-gamma-virid-11.vercel.app/',
   },
   {
-    title: 'Weather Dashboard',
-    description: 'A weather application with detailed forecasts and interactive maps',
+    title: 'YouTube Clone',
+    description: 'A YouTube clone built with HTML and CSS replicates the video streaming platforms layout, including video thumbnails, navigation, and responsive design.',
     image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&q=80&w=1000',
     technologies: ['React', 'OpenWeather API', 'Chart.js'],
-    githubUrl: 'https://github.com/username/weather-app',
-    liveUrl: 'https://weather-dashboard-demo.com',
+    githubUrl: 'https://github.com/ImAjay01/youtube-clone',
+    liveUrl: 'https://imajay01.github.io/youtube-clone/',
   },
 ];
 
