@@ -1,32 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Code2, Gift, Layout, Database } from 'lucide-react';
+import { Code2, Gift, Layout, Layers } from 'lucide-react';
 
 const skills = [
   {
     name: 'Front-end Development',
     icon: Layout,
     description: 'React, TypeScript, Tailwind CSS',
-    level: 90,
+    level: 75,
   },
   {
     name: 'Version Control',
     icon: Gift,
     description: 'Git, GitHub, Collaborative Development',
-    level: 85,
+    level: 80,
   },
   {
     name: 'Programming',
     icon: Code2,
-    description: 'JavaScript, Python, Java',
+    description: 'JavaScript, Typescript',
     level: 88,
   },
   {
-    name: 'Database Management',
-    icon: Database,
-    description: 'SQL, MongoDB, Firebase',
-    level: 75,
+    name: 'Tech Stack',
+    icon: Layers,
+    description: 'MERN',
+    level: 55,
   },
 ];
 

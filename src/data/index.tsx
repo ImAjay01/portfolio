@@ -1,4 +1,4 @@
-import { Code2, Gift, Layout, Database, GraduationCap, Award, BookOpen } from 'lucide-react';
+import { Code2, Gift, Layout, GraduationCap, Award, BookOpen,Layers } from 'lucide-react';
 import { Skill, Project, Experience } from '../types';
 
 export const skills: Skill[] = [
@@ -21,10 +21,10 @@ export const skills: Skill[] = [
     level: 88,
   },
   {
-    name: 'Database Management',
-    icon: Database,
-    description: 'SQL, MongoDB, Firebase',
-    level: 75,
+    name: 'Tech Stack',
+    icon: Layers,
+    description: 'MERN',
+    level: 55,
   },
 ];
 
@@ -58,23 +58,23 @@ export const projects: Project[] = [
 export const experiences: Experience[] = [
   {
     title: 'Computer Science Student',
-    organization: 'University Name',
-    period: '2021 - Present',
-    description: 'Pursuing Bachelor\'s degree with focus on web development and software engineering',
+    organization: 'Amity University',
+    period: '2024 - Present',
+    description: 'Pursuing Bachelor\'s degree with focus on web development, cybersecurity and software engineering',
     icon: GraduationCap,
   },
   {
-    title: 'Web Development Certification',
+    title: 'Responsive Web Design',
     organization: 'freeCodeCamp',
-    period: '2022',
-    description: 'Completed comprehensive web development curriculum covering front-end and back-end technologies',
+    period: '9 Jan 2024',
+    description: 'Completed comprehensive web development curriculum covering front-end technologies',
     icon: Award,
   },
   {
     title: 'Data Structures & Algorithms',
-    organization: 'Coursera',
-    period: '2023',
-    description: 'Advanced course in algorithmic problem solving and optimization',
+    organization: 'GeekforGeeks',
+    period: 'Nov 2024 - Present',
+    description: 'Learning algorithmic problem solving and optimization',
     icon: BookOpen,
   },
 ];
