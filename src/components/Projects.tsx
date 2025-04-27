@@ -24,7 +24,7 @@ const projects = [
     title: 'YouTube Clone',
     description: 'A YouTube clone built with HTML and CSS replicates the video streaming platforms layout, including video thumbnails, navigation, and responsive design.',
     image: 'images/youtube.png',
-    technologies: ['React', 'OpenWeather API', 'Chart.js'],
+    technologies: ['HTML', 'Vanilla CSS'],
     githubUrl: 'https://github.com/ImAjay01/youtube-clone',
     liveUrl: 'https://imajay01.github.io/youtube-clone/',
   },
