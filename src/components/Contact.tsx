@@ -28,27 +28,44 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setLoading(true);
 
-    try {
-      await addDoc(collection(db, "contacts"), {
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-        timestamp: new Date(),
-      });
+  try {
+    // Save to Firestore first
+    await addDoc(collection(db, "contacts"), {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+      timestamp: new Date(),
+    });
 
-      alert("✅ Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      console.error("Error saving data:", error);
-      alert("❌ Failed to send message. Try again!");
-    } finally {
-      setLoading(false);
+    // Send email via API route
+    const res = await fetch("/api/sendEmail", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      alert("✅ Message sent & Email delivered!");
+    } else {
+      alert("⚠️ Saved to DB, but email failed!");
     }
-  };
+
+    // Reset form after success
+    setFormData({ name: "", email: "", message: "" });
+  } catch (error) {
+    console.error("❌ Error submitting form:", error);
+    alert("Failed to send message!");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   return (
     <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
