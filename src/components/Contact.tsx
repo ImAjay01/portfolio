@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Github, Linkedin, Mail, Send } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Github, Linkedin, Mail, Send } from "lucide-react";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../firebase";
 
 const Contact = () => {
   const [ref, inView] = useInView({
@@ -10,22 +12,42 @@ const Contact = () => {
   });
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-  };
+  const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      await addDoc(collection(db, "contacts"), {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        timestamp: new Date(),
+      });
+
+      alert("✅ Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Error saving data:", error);
+      alert("❌ Failed to send message. Try again!");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -52,7 +74,10 @@ const Contact = () => {
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                >
                   Name
                 </label>
                 <input
@@ -66,7 +91,10 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                >
                   Email
                 </label>
                 <input
@@ -80,7 +108,10 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                >
                   Message
                 </label>
                 <textarea
@@ -97,10 +128,11 @@ const Contact = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
+                disabled={loading}
                 className="w-full px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors flex items-center justify-center"
               >
-                <Send className="w-5 h-5 mr-2" />
-                Send Message
+                {loading ? "Sending..." : <Send className="w-5 h-5 mr-2" />}
+                {!loading && "Send Message"}
               </motion.button>
             </form>
           </motion.div>
