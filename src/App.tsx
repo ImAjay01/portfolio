@@ -23,6 +23,7 @@ function App() {
       <Projects />
       <Experience />
       <Contact />
+      
     </div>
   );
 }
