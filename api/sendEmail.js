@@ -24,11 +24,28 @@ export default async function handler(req, res) {
     await transporter.sendMail({
       from: `"Portfolio Contact" <${process.env.GMAIL_USER}>`,
       to: process.env.GMAIL_USER,
-      subject: `New Contact Form Submission from ${name}`,
-      text: `
-        Name: ${name}
-        Email: ${email}
-        Message: ${message}
+      subject: `Contact Form Submission from ${name}`,
+      html: `
+      <div style="font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9;">
+      <h2 style="color: #333;">Contact Form Submission</h2>
+      <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+        <td style="font-weight: bold; padding: 8px; border-bottom: 1px solid #eee;">Name:</td>
+        <td style="padding: 8px; border-bottom: 1px solid #eee;">${name}</td>
+        </tr>
+        <tr>
+        <td style="font-weight: bold; padding: 8px; border-bottom: 1px solid #eee;">Email:</td>
+        <td style="padding: 8px; border-bottom: 1px solid #eee;">${email}</td>
+        </tr>
+        <tr>
+        <td style="font-weight: bold; padding: 8px;">Message:</td>
+        <td style="padding: 8px;">${message.replace(/\n/g, "<br>")}</td>
+        </tr>
+      </table>
+      <p style="margin-top: 20px; color: #555;">
+        This message was submitted via the portfolio contact form. Please review the details above and respond as appropriate.
+      </p>
+      </div>
       `,
     });
 

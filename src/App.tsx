@@ -27,7 +27,7 @@ function App() {
       <Projects />
       <Experience />
       <Contact />
-      
+
       <Analytics />
       <SpeedInsights />
     </div>
